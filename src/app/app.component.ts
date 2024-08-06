@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { UploadComponent } from './upload/upload-component/upload-component.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
+  template: '<app-upload></app-upload>',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [HttpClientModule ,UploadComponent]
 })
 export class AppComponent {
-  title = 'wedding-fe';
+  title = 'Image Upload App';
 }
