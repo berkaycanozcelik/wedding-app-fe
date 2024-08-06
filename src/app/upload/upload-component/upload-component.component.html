@@ -1,12 +1,15 @@
 <div class="upload-container">
   <header>
-    <h1>Share Your Wedding Moments!</h1>
-    <p>We’d love to see your photos and videos from the big day. Upload your files below.</p>
+    <h1>Betül ve Berkay'ın Özel Anlarını Paylaşın</h1>
+    <p>Sevgili Misafirlerimiz, düğünümüzde birlikte geçirdiğimiz harika anları sizin gözünüzden görmek bizim için çok değerli.
+    </p>
+    <p>Lütfen burada çektiğiniz fotoğrafları ve videoları yükleyerek bu özel günü bizimle paylaşın. Her bir anı, bu özel günün hatıralarını daha da anlamlı kılacak. Şimdiden katkılarınız için teşekkür ederiz!
+    </p>
   </header>
   <main>
     <form id="uploadForm">
       <input type="file" (change)="onFileSelected($event)" multiple accept="image/*,video/*" />
-      <button type="button" (click)="onUpload()">Upload Files</button>
+      <button type="button" (click)="onUpload()">Yükle</button>
       <p *ngIf="message">{{ message }}</p>
       <div id="progress-container" *ngIf="progress > 0">
         <progress [value]="progress" max="100"></progress>

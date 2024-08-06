@@ -26,7 +26,7 @@ export class UploadComponent {
     this.progress = 0;
 
     if (this.selectedFiles.length === 0) {
-      this.message = 'Please select files to upload.';
+      this.message = 'Lütfen dosya seçiniz';
       return;
     }
 
@@ -43,12 +43,12 @@ export class UploadComponent {
             this.progress = Math.round((100 * event.loaded) / event.total);
           }
         } else if (event.type === HttpEventType.Response) {
-          this.message = 'Files uploaded successfully!';
+          this.message = 'Dosyalar başarıyla yüklendi!';
         }
       },
       error: (err) => {
         this.progress = 0;
-        this.message = 'An error occurred during upload.';
+        this.message = 'Bir hata oluştu. Lütfen tekrar deneyiniz';
         console.error('Upload error:', err);
       }
     });
