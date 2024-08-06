@@ -14,7 +14,7 @@ export class UploadComponent {
   selectedFiles: File[] = [];
   message = '';
   progress = 0;
-  private uploadUrl = 'http://3.127.69.141/upload-file/'; // Updated to a generic file upload endpoint
+  private uploadUrl = 'http://33.127.69.141/upload-file/'; // Updated to a generic file upload endpoint
 
   constructor(private http: HttpClient) {}
 
