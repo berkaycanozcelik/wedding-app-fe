@@ -6,7 +6,7 @@ FROM node:18 as build
 WORKDIR /app
 
 # Copy package.json and package-lock.json to install dependencies
-COPY package*.json ./
+COPY package*.json .
 
 # Install dependencies
 RUN npm install
@@ -22,7 +22,7 @@ RUN npm run build --prod
 FROM nginx:stable-alpine
 
 # Copy the build output to the NGINX HTML folder
-COPY --from=build /app/dist/wedding-fe /usr/share/nginx/html
+COPY --from=build /app/dist/wedding-fe/browser /usr/share/nginx/html
 
 # Copy the custom NGINX configuration file (optional)
 # COPY nginx.conf /etc/nginx/nginx.conf
