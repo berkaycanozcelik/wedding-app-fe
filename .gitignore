@@ -6,6 +6,7 @@
 /out-tsc
 /bazel-out
 *.pem
+*.env
 
 # Node
 /node_modules
