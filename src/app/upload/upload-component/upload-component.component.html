@@ -10,11 +10,15 @@
     <form id="uploadForm">
       <input type="file" (change)="onFileSelected($event)" multiple accept="image/*,video/*" />
       <button type="button" (click)="onUpload()">Yükle</button>
-      <p *ngIf="message">{{ message }}</p>
-      <div id="progress-container" *ngIf="progress > 0">
-        <progress [value]="progress" max="100"></progress>
-        <span id="progress-text">{{ progress }}%</span>
-      </div>
+      @if(message){
+        <p>{{ message }}</p>
+      }
+      @if(progress > 0){
+        <div id="progress-container">
+          <progress [value]="progress" max="100"></progress>
+          <span id="progress-text">{{ progress }}%</span>
+        </div>
+      }
     </form>
   </main>
 </div>
